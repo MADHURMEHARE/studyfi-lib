@@ -40,7 +40,7 @@ export default function HeroSection() {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed font-medium">
-        <span className="text-orange-600 font-bold"> Study in comfort, Achieve with Confidence. Specially Designed fOR ALL COMPETIVE STUDENT</span> 
+        <span className="text-orange-600 font-bold"> Study in comfort, Achieve with Confidence. Specially Designed for All Competitive Students</span>
           </p>
           
           <div className="flex justify-center mb-16">
