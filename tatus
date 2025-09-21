@@ -1,0 +1,5 @@
+[33me897ad6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Fix TypeScript compilation error in dashboard
+[33mfe3fe90[m Hide dashboard and reserve buttons from UI
+[33m0d460b7[m Remove authentication system and restore original functionality
+[33m2593fdd[m Fix register page compilation error
+[33me6faab6[m Remove demo credentials from login page for security

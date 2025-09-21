@@ -2,6 +2,7 @@
 
 import { ArrowRight, MapPin } from 'lucide-react';
 import Image from 'next/image';
+import ProtectedButton from '../shared/ProtectedButton';
 
 export default function HeroSection() {
   return (
@@ -42,16 +43,16 @@ export default function HeroSection() {
         <span className="text-orange-600 font-bold"> Study in comfort, Achieve with Confidence. Specially Designed fOR ALL COMPETIVE STUDENT</span> 
           </p>
           
-          {/* Reserve Button - Hidden */}
-          {/* <div className="flex justify-center mb-16">
-            <button 
+          <div className="flex justify-center mb-16">
+            <ProtectedButton 
               onClick={() => window.location.href = '/register'}
               className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-12 py-5 rounded-2xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 text-xl font-bold flex items-center justify-center space-x-3 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 border-2 border-orange-400"
+              message="Please login to reserve a seat"
             >
               <span>Reserve Your Seat</span>
               <MapPin className="w-6 h-6" />
-            </button>
-          </div> */}
+            </ProtectedButton>
+          </div>
 
           {/* Feature highlights */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
