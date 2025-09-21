@@ -1,0 +1,40 @@
+<svg width="300" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="120" fill="white"/>
+  
+  <!-- Graduation Cap Icon -->
+  <g transform="translate(35, 15)">
+    <!-- Cap base -->
+    <path d="M5 8 L25 8 L25 12 L5 12 Z" fill="#FF6B35"/>
+    <!-- Cap top -->
+    <path d="M3 8 L27 8 L20 2 L10 2 Z" fill="#FF6B35"/>
+    <!-- Tassel -->
+    <line x1="25" y1="8" x2="30" y2="3" stroke="#FF6B35" stroke-width="2"/>
+    <circle cx="30" cy="3" r="1.5" fill="#FF6B35"/>
+  </g>
+  
+  <!-- Wi-Fi Icon -->
+  <g transform="translate(210, 15)">
+    <circle cx="0" cy="0" r="1.5" fill="#FF6B35"/>
+    <path d="M-8 0 A8 8 0 0 1 8 0" stroke="#FF6B35" stroke-width="2" fill="none"/>
+    <path d="M-12 0 A12 12 0 0 1 12 0" stroke="#FF6B35" stroke-width="2" fill="none"/>
+    <path d="M-16 0 A16 16 0 0 1 16 0" stroke="#FF6B35" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Study-Fi Text -->
+  <text x="150" y="55" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#2D3748" text-anchor="middle">
+    <tspan font-style="italic">Study</tspan>-<tspan font-weight="bold">Fi</tspan>
+  </text>
+  
+  <!-- Trademark Symbol -->
+  <text x="230" y="35" font-family="Arial, sans-serif" font-size="10" fill="#666" font-weight="normal">™</text>
+  
+  <!-- Reading Room Banner -->
+  <rect x="80" y="70" width="70" height="25" rx="4" fill="#FF6B35"/>
+  <text x="115" y="86" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">READING ROOM</text>
+  
+  <!-- & Library Banner -->
+  <rect x="150" y="70" width="60" height="25" rx="4" fill="#FF6B35"/>
+  <text x="180" y="86" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">&amp; LIBRARY</text>
+</svg>
+

@@ -1,0 +1,29 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" fill="white"/>
+  
+  <!-- Graduation Cap Icon -->
+  <g transform="translate(4, 4)">
+    <!-- Cap base -->
+    <path d="M2 2 L6 2 L6 4 L2 4 Z" fill="#FF6B35"/>
+    <!-- Cap top -->
+    <path d="M1 2 L7 2 L5.5 0.5 L2.5 0.5 Z" fill="#FF6B35"/>
+    <!-- Tassel -->
+    <line x1="6" y1="2" x2="7.5" y2="0.5" stroke="#FF6B35" stroke-width="1"/>
+    <circle cx="7.5" cy="0.5" r="0.5" fill="#FF6B35"/>
+  </g>
+  
+  <!-- Wi-Fi Icon -->
+  <g transform="translate(22, 4)">
+    <circle cx="0" cy="0" r="0.5" fill="#FF6B35"/>
+    <path d="M-2 0 A2 2 0 0 1 2 0" stroke="#FF6B35" stroke-width="1" fill="none"/>
+    <path d="M-3 0 A3 3 0 0 1 3 0" stroke="#FF6B35" stroke-width="1" fill="none"/>
+    <path d="M-4 0 A4 4 0 0 1 4 0" stroke="#FF6B35" stroke-width="1" fill="none"/>
+  </g>
+  
+  <!-- Study-Fi Text -->
+  <text x="16" y="22" font-family="Georgia, serif" font-size="6" font-weight="bold" fill="#2D3748" text-anchor="middle">
+    StudyFi
+  </text>
+</svg>
+
