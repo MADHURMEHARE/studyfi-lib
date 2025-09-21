@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { LogOut, Plus, Mail, Users, MapPin, Home } from 'lucide-react';
+import ProtectedRoute from '@/components/shared/ProtectedRoute';
+import { useAuth } from '@/lib/auth-context';
 import SeatMap from '@/components/dashboard/SeatMap';
 import StudentTable from '@/components/dashboard/StudentTable';
 import StudentForm from '@/components/dashboard/StudentForm';
@@ -38,6 +40,7 @@ interface Seat {
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState<'students' | 'approvals' | 'subscriptions'>('students');
+  const { logout } = useAuth();
   
   // Demo data - in a real app, this would come from an API
   const [students, setStudents] = useState<Student[]>([
@@ -105,6 +108,8 @@ export default function Dashboard() {
   const router = useRouter();
 
   const handleLogout = () => {
+    logout();
+    toast.success('Logged out successfully');
     router.push('/');
   };
 
@@ -211,9 +216,10 @@ export default function Dashboard() {
   const unpaidStudents = students.filter(student => student.feeStatus === 'Unpaid').length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100">
-      {/* Background Notification System */}
-      <NotificationSystem />
+    <ProtectedRoute>
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100">
+        {/* Background Notification System */}
+        <NotificationSystem />
       
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md shadow-lg border-b border-orange-200">
@@ -404,6 +410,7 @@ export default function Dashboard() {
           <SubscriptionManager />
         )}
       </main>
-    </div>
+      </div>
+    </ProtectedRoute>
   );
 }
