@@ -383,7 +383,6 @@ export default function Dashboard() {
           students={students}
           onEdit={handleEditStudent}
           onDelete={handleDeleteStudent}
-          onSendReminder={handleSendReminder}
         />
 
         {/* Student Form Modal */}
