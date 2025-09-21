@@ -81,7 +81,7 @@ export default function LoginPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
-                  placeholder="admin@studyfi.com"
+                  placeholder="Enter your email"
                 />
               </div>
             </div>
@@ -134,14 +134,6 @@ export default function LoginPage() {
             </button>
           </form>
 
-          {/* Demo Credentials */}
-          <div className="mt-6 p-4 bg-orange-50 rounded-lg border border-orange-200">
-            <h3 className="text-sm font-semibold text-orange-800 mb-2">Demo Credentials:</h3>
-            <div className="text-sm text-orange-700 space-y-1">
-              <p><strong>Email:</strong> admin@studyfi.com</p>
-              <p><strong>Password:</strong> admin123</p>
-            </div>
-          </div>
 
           {/* Back to Home */}
           <div className="mt-6 text-center">
