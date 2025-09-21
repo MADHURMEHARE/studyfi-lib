@@ -20,9 +20,10 @@ interface StudentFormProps {
   isOpen: boolean;
   onClose: () => void;
   onSubmit: (studentData: Partial<Student>) => void;
+  availableSeats?: number[];
 }
 
-export default function StudentForm({ student, isOpen, onClose, onSubmit }: StudentFormProps) {
+export default function StudentForm({ student, isOpen, onClose, onSubmit, availableSeats }: StudentFormProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -169,16 +170,33 @@ export default function StudentForm({ student, isOpen, onClose, onSubmit }: Stud
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Seat Number *</label>
-              <input
-                type="number"
-                name="seatNumber"
-                value={formData.seatNumber}
-                onChange={handleInputChange}
-                min="1"
-                max="40"
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
-              />
+              {availableSeats && availableSeats.length > 0 ? (
+                <select
+                  name="seatNumber"
+                  value={formData.seatNumber}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                >
+                  <option value="">Select a seat</option>
+                  {availableSeats.map(seatNum => (
+                    <option key={seatNum} value={seatNum}>
+                      Seat {seatNum}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  type="number"
+                  name="seatNumber"
+                  value={formData.seatNumber}
+                  onChange={handleInputChange}
+                  min="1"
+                  max="40"
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                />
+              )}
             </div>
 
             <div>
