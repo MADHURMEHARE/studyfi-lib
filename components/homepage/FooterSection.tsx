@@ -55,7 +55,7 @@ export default function FooterSection() {
                 <LocationPin className="w-6 h-6 text-orange-400 mt-1" />
                 <span className="text-gray-200 text-lg font-medium">
                   Vaibhav Colony,Dastur Nagar, MIDC Road,<br />
-                  Amravati, Maharashtra, near gondbaba mandirIndia
+                  Amravati, Maharashtra, near gondbaba mandir,India
                 </span>
               </div>
             </div>
