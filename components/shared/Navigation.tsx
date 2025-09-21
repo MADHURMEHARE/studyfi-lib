@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { ArrowRight, Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import Image from 'next/image';
-import ProtectedButton from './ProtectedButton';
 
 export default function Navigation() {
   const router = useRouter();
@@ -101,14 +100,13 @@ export default function Navigation() {
               </div>
 
               {/* Dashboard Button */}
-              <ProtectedButton
+              <button
                 onClick={() => router.push('/dashboard')}
                 className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 font-semibold flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                message="Please login to access the admin dashboard"
               >
                 <span>Dashboard</span>
                 <ArrowRight className="w-4 h-4" />
-              </ProtectedButton>
+              </button>
 
               {/* Mobile Menu Button */}
               <button
