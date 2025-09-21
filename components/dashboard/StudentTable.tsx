@@ -17,9 +17,10 @@ interface StudentTableProps {
   students: Student[];
   onEdit: (student: Student) => void;
   onDelete: (id: string) => void;
+  onSendReminder: (student: Student) => Promise<void>;
 }
 
-export default function StudentTable({ students, onEdit, onDelete }: StudentTableProps) {
+export default function StudentTable({ students, onEdit, onDelete, onSendReminder }: StudentTableProps) {
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
       <div className="px-6 py-4 bg-gray-50 border-b border-gray-200">
@@ -108,6 +109,14 @@ export default function StudentTable({ students, onEdit, onDelete }: StudentTabl
                   >
                     Edit
                   </button>
+                  {student.feeStatus === 'Unpaid' && (
+                    <button
+                      onClick={() => onSendReminder(student)}
+                      className="text-orange-600 hover:text-orange-900 transition-colors"
+                    >
+                      Remind
+                    </button>
+                  )}
                   <button
                     onClick={() => onDelete(student._id)}
                     className="text-red-600 hover:text-red-900 transition-colors"
