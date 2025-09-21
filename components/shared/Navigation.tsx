@@ -99,14 +99,14 @@ export default function Navigation() {
                 </div>
               </div>
 
-              {/* Dashboard Button */}
-              <button
+              {/* Dashboard Button - Hidden */}
+              {/* <button
                 onClick={() => router.push('/dashboard')}
                 className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 font-semibold flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 <span>Dashboard</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </button> */}
 
               {/* Mobile Menu Button */}
               <button
