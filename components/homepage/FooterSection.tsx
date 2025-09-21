@@ -54,8 +54,8 @@ export default function FooterSection() {
               <div className="flex items-start space-x-3 bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-orange-500/20">
                 <LocationPin className="w-6 h-6 text-orange-400 mt-1" />
                 <span className="text-gray-200 text-lg font-medium">
-                  Vaibhav Colony,DASTUR NAGAR, MIDC Road,<br />
-                  Amravati, Maharashtra, India
+                  Vaibhav Colony,Dastur Nagar, MIDC Road,<br />
+                  Amravati, Maharashtra, near gondbaba mandirIndia
                 </span>
               </div>
             </div>
