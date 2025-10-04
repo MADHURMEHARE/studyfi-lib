@@ -12,7 +12,7 @@ export default function BlogSection() {
         About Library: I tried 3–4 libraries before joining StudyFi. StudyFi has the best environment—serious students kept me motivated. Highly recommend!
       `,
       statusColor: "bg-blue-400",
-      image: "uploads/Khushali.png", // ✅ Add student photo
+      image: "/uploads/khushalii.jpg", // ✅ Add student photo
     },
    
   ];
