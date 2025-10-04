@@ -6,6 +6,7 @@ import ProtectedButton from '../shared/ProtectedButton';
 
 export default function HeroSection() {
   return (
+   
     <section id="hero" className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100 pt-20 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -19,16 +20,16 @@ export default function HeroSection() {
           {/* Logo with enhanced styling */}
           <div className="flex justify-center mb-12">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 rounded-3xl blur-lg opacity-30 animate-pulse"></div>
-              <div className="relative bg-white/90 backdrop-blur-sm p-6 rounded-3xl shadow-2xl border border-orange-200">
-                <Image 
+              {/* <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 rounded-3xl blur-lg opacity-30 animate-pulse"></div> */}
+              {/* <div className="relative bg-white/90 backdrop-blur-sm p-6 rounded-3xl shadow-2xl border border-orange-200"> */}
+                {/* <Image 
                   src="/study-fi-logo.svg" 
                   alt="Study-Fi Logo" 
                   width={400} 
                   height={160}
                   className="h-32 md:h-40 w-auto"
-                />
-              </div>
+                /> */}
+              {/* </div> */}
             </div>
           </div>
           
@@ -43,7 +44,7 @@ export default function HeroSection() {
         <span className="text-orange-600 font-bold"> Study in comfort, Achieve with Confidence. Specially Designed for All Competitive Students</span>
           </p>
           
-          <div className="flex justify-center mb-16">
+          {/* <div className="flex justify-center mb-16">
             <ProtectedButton 
               onClick={() => window.location.href = '/register'}
               className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-12 py-5 rounded-2xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 text-xl font-bold flex items-center justify-center space-x-3 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 border-2 border-orange-400"
@@ -52,26 +53,27 @@ export default function HeroSection() {
               <span>Reserve Your Seat</span>
               <MapPin className="w-6 h-6" />
             </ProtectedButton>
-          </div>
+          </div> */}
 
           {/* Feature highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-orange-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="text-orange-500 text-4xl mb-4">📚</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">80 Study Seats</h3>
-              <p className="text-gray-600">Professional study environment with comfortable seating</p>
-            </div>
-            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-orange-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="text-orange-500 text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Instant Booking</h3>
-              <p className="text-gray-600">Reserve your seat in seconds with real-time availability</p>
-            </div>
-            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-orange-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="text-orange-500 text-4xl mb-4">🎯</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Exam Focused</h3>
-              <p className="text-gray-600">Specialized for MPSC, CA, NEET, JEE & All competative exams</p>
-            </div>
-          </div>
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-5xl mx-auto">
+  <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-orange-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+    <div className="text-orange-500 text-4xl mb-4">📚</div>
+    <h3 className="text-xl font-bold text-gray-800 mb-2">80 Study Seats</h3>
+    <p className="text-gray-600">Professional study environment with comfortable seating</p>
+  </div>
+  <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-orange-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+    <div className="text-orange-500 text-4xl mb-4">⚡</div>
+    <h3 className="text-xl font-bold text-gray-800 mb-2">Instant Booking</h3>
+    <p className="text-gray-600">Reserve your seat in seconds with real-time availability</p>
+  </div>
+  <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-orange-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+    <div className="text-orange-500 text-4xl mb-4">🎯</div>
+    <h3 className="text-xl font-bold text-gray-800 mb-2">Exam Focused</h3>
+    <p className="text-gray-600">Specialized for MPSC, CA, NEET, JEE & All competitive exams</p>
+  </div>
+</div>
+
         </div>
       </div>
     </section>

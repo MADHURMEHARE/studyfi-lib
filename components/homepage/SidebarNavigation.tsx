@@ -127,7 +127,7 @@ export default function SidebarNavigation() {
 
   return (
     <>
-      {/* Custom CSS for enhanced blinking animations */}
+      {/* Custom CSS for enhanced blinking animations
       <style jsx>{`
         @keyframes flash {
           0%, 50%, 100% { opacity: 1; }
@@ -159,7 +159,7 @@ export default function SidebarNavigation() {
         .animate-ping-enhanced {
           animation: ping-enhanced 1s cubic-bezier(0, 0, 0.2, 1) infinite;
         }
-      `}</style>
+      `}</style> */}
       
       {/* Desktop Sidebar */}
       <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">

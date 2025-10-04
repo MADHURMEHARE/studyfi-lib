@@ -30,13 +30,13 @@ export default function Navigation() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-orange-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex items-center space-x-3">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl blur-sm opacity-30"></div>
-                <div className="relative bg-white/90 p-2 rounded-xl">
+                <div className="relative bg-white/90  rounded-xl">
                   <Image 
                     src="/study-fi-logo.svg" 
                     alt="Study-Fi Logo" 
@@ -101,14 +101,14 @@ export default function Navigation() {
               </div>
 
               {/* Dashboard Button */}
-              <ProtectedButton
+              {/* <ProtectedButton
                 onClick={() => router.push('/dashboard')}
                 className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 font-semibold flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 message="Please login to access the admin dashboard"
               >
                 <span>Dashboard</span>
                 <ArrowRight className="w-4 h-4" />
-              </ProtectedButton>
+              </ProtectedButton> */}
 
               {/* Mobile Menu Button */}
               <button
