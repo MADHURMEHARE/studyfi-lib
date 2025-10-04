@@ -3,8 +3,7 @@ import { ArrowRight } from "lucide-react";
 export default function BlogSection() {
   const blogPosts = [
     {
-      date: "—",
-      title: "Khushali K – Success Story",
+      title: "Khushali K    :Success Story",
       content: `
         Selection: IBPS Clerk, SBI JA, UBI Officer, UIIC Administrative Officer.
         Study Strategy: I prepared mains first and pre later. That gave me confidence during mains.
@@ -13,7 +12,7 @@ export default function BlogSection() {
         About Library: I tried 3–4 libraries before joining StudyFi. StudyFi has the best environment—serious students kept me motivated. Highly recommend!
       `,
       statusColor: "bg-blue-400",
-      image: "/uploads/Khushali.png", // ✅ Add student photo
+      image: "/uploads/khushalii.jpg", // ✅ Add student photo
     },
    
   ];
@@ -37,9 +36,7 @@ export default function BlogSection() {
             Students <span className="block text-orange-100">Blog</span>
           </h2>
           <p className="text-xl md:text-2xl text-orange-100 max-w-4xl mx-auto font-medium leading-relaxed">
-            Welcome to the StudyFi Library blog! Stay updated with the latest
-            arrivals, tips for competitive exams, seat reservation updates, and
-            essential announcements for students.
+            Welcome to the StudyFi Library Student Blogs - Here students share their success stories, study strategies, and tips for competitive exams.
           </p>
         </div>
 
@@ -59,10 +56,10 @@ export default function BlogSection() {
                 />
               )}
 
-              <div className="p-8">
+              <div className="">
                 <div className="flex items-center justify-between mb-6">
                   <span className="text-orange-100 text-lg font-semibold">
-                    {post.date}
+               
                   </span>
                   <div
                     className={`w-5 h-5 ${post.statusColor} rounded-full shadow-lg animate-pulse`}
@@ -74,10 +71,7 @@ export default function BlogSection() {
                 <p className="text-orange-100 leading-relaxed text-lg whitespace-pre-line mb-8">
                   {post.content}
                 </p>
-                <button className="flex items-center space-x-3 text-white hover:text-orange-200 transition-all duration-300 font-bold text-lg group">
-                  <span>Read More</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+               
               </div>
             </div>
           ))}
