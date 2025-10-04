@@ -163,7 +163,7 @@ export default function SidebarNavigation() {
       
       {/* Desktop Sidebar */}
       <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">
-        <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 p-4">
+        {/* <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 p-4"> */}
           <div className="flex flex-col space-y-2">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -211,7 +211,7 @@ export default function SidebarNavigation() {
                 </button>
               );
             })}
-          </div>
+          {/* </div> */}
         </div>
       </div>
 

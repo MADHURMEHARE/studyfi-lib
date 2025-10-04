@@ -10,14 +10,12 @@ import FooterSection from '@/components/homepage/FooterSection';
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50">
-      <Navigation />
       <SidebarNavigation />
       <HeroSection />
       <AboutSection />
       <FeaturesSection />
       <MembershipSection />
-      <BlogSection />
-      <FooterSection />
+      <BlogSection />  
     </div>
   );
 }
