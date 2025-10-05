@@ -31,7 +31,7 @@ export default function table() {
             <td className="border border-gray-300 p-3">5:00 PM</td>
           </tr> <tr>
             <td className="border border-gray-300 p-3">halftiming/mon-sun</td>
-            <td className="border border-gray-300 p-3">5:00 AM</td>
+            <td className="border border-gray-300 p-3">5:00 PM</td>
             <td className="border border-gray-300 p-3">10:00 PM</td>
           </tr>
           {/* Add more days as needed */}
