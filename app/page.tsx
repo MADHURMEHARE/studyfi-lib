@@ -6,6 +6,7 @@ import FeaturesSection from '@/components/homepage/FeaturesSection';
 import MembershipSection from '@/components/homepage/MembershipSection';
 import BlogSection from '@/components/homepage/BlogSection';
 import FooterSection from '@/components/homepage/FooterSection';
+import { Table } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
       <AboutSection />
       <FeaturesSection />
       <MembershipSection />
-      <BlogSection />  
+      <BlogSection /> 
+      <Table/>
     </div>
   );
 }
