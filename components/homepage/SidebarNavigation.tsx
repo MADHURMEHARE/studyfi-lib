@@ -14,7 +14,7 @@ const navItems: NavItem[] = [
   { id: 'about', label: 'About', icon: Info },
   { id: 'features', label: 'Features', icon: Star },
   { id: 'membership', label: 'Membership', icon: CreditCard },
-  { id: 'blog', label: 'Blog', icon: FileText },
+  // { id: 'blog', label: 'Blog', icon: FileText },
   { id: 'contact', label: 'Contact', icon: MessageCircle }
 ];
 

@@ -4,8 +4,9 @@ import HeroSection from '@/components/homepage/HeroSection';
 import AboutSection from '@/components/homepage/AboutSection';
 import FeaturesSection from '@/components/homepage/FeaturesSection';
 import MembershipSection from '@/components/homepage/MembershipSection';
-import BlogSection from '@/components/homepage/BlogSection';
+// import BlogSection from '@/components/homepage/BlogSection';
 import FooterSection from '@/components/homepage/FooterSection';
+// import BlogsCard from './blog/components/common/BlogsCard';
 
 export default function Home() {
   return (
@@ -15,7 +16,9 @@ export default function Home() {
       <AboutSection />
       <FeaturesSection />
       <MembershipSection />
-      <BlogSection />  
+      {/* <BlogSection />   */}
+      
+  
     </div>
   );
 }

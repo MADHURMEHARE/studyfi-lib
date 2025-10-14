@@ -1,73 +1,54 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { useRouter, usePathname } from 'next/navigation';
+import { useState, useMemo } from 'react';
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 
-export default function Navigation() {
+export default function SimpleNavigation() {
   const router = useRouter();
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>('about');
 
-  // Navigation links array
-  const navLinks = [
-    { id: 'about', label: 'About' },
-    { id: 'features', label: 'Features' },
-    { id: 'membership', label: 'Pricing' },
-    { id: 'blog', label: 'Blog' },
-    { id: 'timing', label: 'Timing', route: '/timing' }, // New Timing page route
-    { id: 'contact', label: 'Contact' },
-  ];
+  type NavLink = { id: string; label: string; route: string };
+  
+  // All links are now treated as page routes for simplicity
+  const navLinks: NavLink[] = useMemo(
+    () => [
+      // For a simple router, assume the root page '/' is the collection of all sections
+      { id: 'home', label: 'Home', route: '/' },
+      { id: 'blog', label: 'Student', route: '/blog' },
+      { id: 'timing', label: 'Timing', route: '/timing' },
+      { id: 'contact', label: 'Contact', route: '/contact' },
+    ],
+    []
+  );
 
-  const handleNavigation = (link: { id: string; route?: string }) => {
-    if (link.route) {
-      // Navigate to external page (Timing)
-      router.push(link.route);
-    } else {
-      // Scroll to section
-      const element = document.getElementById(link.id);
-      if (element) {
-        const elementTop = element.offsetTop;
-        const targetScrollY = elementTop - 80;
-        window.scrollTo({
-          top: targetScrollY,
-          behavior: 'smooth',
-        });
-      }
-    }
+  const handleNavigation = (link: NavLink) => {
+    // Simply navigate to the route
+    router.push(link.route);
     setIsMenuOpen(false);
   };
-
-  // Scroll spy effect
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      for (let link of navLinks) {
-        if (link.route) continue; // Skip scroll spy for pages
-        const element = document.getElementById(link.id);
-        if (element) {
-          const top = element.offsetTop;
-          const bottom = top + element.offsetHeight;
-          if (scrollY + 100 >= top && scrollY + 100 < bottom) {
-            setActiveSection(link.id);
-            break;
-          }
-        }
+  
+  // Function to determine if a link is active based on the current pathname
+  const isActive = (route: string) => {
+      // Handles the root path
+      if (route === '/') {
+          return pathname === '/';
       }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // initialize active section
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+      // Handles all other pages (e.g., /blog, /timing, /blog/post-1)
+      return pathname.startsWith(route);
+  };
 
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-orange-200">
         <div className="flex justify-between items-center h-20 px-4 md:px-10 lg:px-20">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
+          {/* Logo - Navigates to home */}
+          <button 
+            onClick={() => router.push('/')}
+            className="flex items-center space-x-3 cursor-pointer"
+          >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl blur-sm opacity-30"></div>
               <div className="relative bg-white/90 rounded-xl">
@@ -80,7 +61,7 @@ export default function Navigation() {
                 />
               </div>
             </div>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -89,22 +70,21 @@ export default function Navigation() {
                 key={link.id}
                 onClick={() => handleNavigation(link)}
                 className={`relative text-gray-700 font-medium transition-colors ${
-                  activeSection === link.id ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'
+                  isActive(link.route) ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'
                 }`}
               >
                 {link.label}
-                {!link.route && (
-                  <span
-                    className={`absolute left-0 -bottom-1 h-0.5 w-full bg-orange-600 transition-all ${
-                      activeSection === link.id ? 'scale-x-100' : 'scale-x-0'
-                    } origin-left`}
-                  ></span>
-                )}
+                {/* Underline for active state */}
+                <span
+                  className={`absolute left-0 -bottom-1 h-0.5 w-full bg-orange-600 transition-all ${
+                    isActive(link.route) ? 'scale-x-100' : 'scale-x-0'
+                  } origin-left`}
+                ></span>
               </button>
             ))}
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu Toggle */}
           <div className="flex lg:hidden items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -115,7 +95,7 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Panel */}
         {isMenuOpen && (
           <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-orange-200 shadow-lg">
             <div className="px-4 py-6 space-y-4">
@@ -124,7 +104,7 @@ export default function Navigation() {
                   key={link.id}
                   onClick={() => handleNavigation(link)}
                   className={`block w-full text-left text-gray-700 font-medium transition-colors py-2 ${
-                    activeSection === link.id ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'
+                    isActive(link.route) ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'
                   }`}
                 >
                   {link.label}
