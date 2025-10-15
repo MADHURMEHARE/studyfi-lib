@@ -1,34 +1,7 @@
+
+ import { plans } from '@/components/homepage/utils/data/DATA';
+
 export default function MembershipSection() {
-  const plans = [
-    {
-      name: "Half-time Registration",
-      price: "₹400",
-      description: "Perfect for students who study part-time",
-      bgColor: "from-orange-50 to-orange-100",
-      borderColor: "border-orange-200 hover:border-orange-300",
-      buttonColor: "bg-orange-500 hover:bg-orange-600",
-      icon: "⏰"
-    },
-    {
-      name: "Full Registration",
-      price: "₹700",
-      description: "Complete access to all facilities",
-      bgColor: "from-orange-100 to-orange-200",
-      borderColor: "border-orange-300 hover:border-orange-400",
-      buttonColor: "bg-orange-600 hover:bg-orange-700",
-      isPopular: true,
-      icon: "⭐"
-    },
-    {
-      name: "Non-Reservation Access",
-      price: "₹600",
-      description: "Flexible access without seat reservation",
-      bgColor: "from-orange-50 to-white",
-      borderColor: "border-orange-200 hover:border-orange-300",
-      buttonColor: "bg-white text-orange-600 border-2 border-orange-500 hover:bg-orange-50",
-      icon: "🔄"
-    }
-  ];
 
   return (
     <section id="membership" className="py-20 bg-gradient-to-br from-white via-orange-50 to-orange-100 relative overflow-hidden">

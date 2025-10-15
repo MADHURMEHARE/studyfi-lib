@@ -1,9 +1,9 @@
 'use client';
-
 import { useRouter, usePathname } from 'next/navigation';
 import { useState, useMemo } from 'react';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
+import { Searchbar } from '../search/Searchbar';
 
 export default function SimpleNavigation() {
   const router = useRouter();
@@ -20,6 +20,7 @@ export default function SimpleNavigation() {
       { id: 'blog', label: 'Student', route: '/blog' },
       { id: 'timing', label: 'Timing', route: '/timing' },
       { id: 'contact', label: 'Contact', route: '/contact' },
+      
     ],
     []
   );
@@ -45,12 +46,11 @@ export default function SimpleNavigation() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-orange-200">
         <div className="flex justify-between items-center h-20 px-4 md:px-10 lg:px-20">
           {/* Logo - Navigates to home */}
-          <button 
-            onClick={() => router.push('/')}
-            className="flex items-center space-x-3 cursor-pointer"
-          >
+      <Searchbar/>
+
+          
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl blur-sm opacity-30"></div>
+              {/* <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl blur-sm opacity-30"></div> */}
               <div className="relative bg-white/90 rounded-xl">
                 <Image
                   src="/study-fi-logo.svg"
@@ -60,8 +60,11 @@ export default function SimpleNavigation() {
                   className="h-12 w-auto"
                 />
               </div>
+      {/* <Searchbar/> */}
+
             </div>
-          </button>
+        
+      {/* <Searchbar/> */}
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -111,6 +114,8 @@ export default function SimpleNavigation() {
                 </button>
               ))}
             </div>
+      {/* <Searchbar/> */}
+
           </div>
         )}
       </nav>
