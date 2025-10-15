@@ -3,6 +3,7 @@
 import { MapPin } from 'lucide-react';
 import ProtectedButton from '../shared/ProtectedButton';
 // import { featuress } from './utils/data/DATA';
+// import { Searchbar } from './Searchbar';
 
 
 interface Feature {
@@ -27,6 +28,8 @@ export default function HeroSection({
   videoUrl,
 }: HeroSectionProps) {
   return (
+
+    
     <section
       id="hero"
       className="min-h-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden mt-20"
@@ -36,6 +39,7 @@ export default function HeroSection({
           : undefined,
       }}
     >
+      {/* <Searchbar/> */}
       {/* Video Background */}
       {videoUrl && (
         <video
@@ -49,6 +53,7 @@ export default function HeroSection({
           Your browser does not support the video tag.
         </video>
       )}
+      {/* <Searchbar/> */}
 
       {/* Decorative Circles */}
       <div className="absolute inset-0 overflow-hidden">
@@ -84,6 +89,7 @@ export default function HeroSection({
           </ProtectedButton>
         </div>
         */}
+      {/* <Searchbar/> */}
 
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-5xl mx-auto">
