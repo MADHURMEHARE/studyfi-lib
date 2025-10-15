@@ -20,7 +20,7 @@ export default function Home() {
         subHeading="StudyFi Library"
         description="Study in comfort, Achieve with Confidence. Specially Designed for All Competitive Students"
         features={heroFeatures}
-        videoUrl="/videos/Hero.mp4" // Make sure file exists in public/videos
+        videoUrl="/videos/Heroo.mp4" // Make sure file exists in public/videos
         
       /> 
       
