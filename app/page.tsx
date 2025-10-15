@@ -7,6 +7,9 @@ import MembershipSection from '@/components/homepage/MembershipSection';
 // import BlogSection from '@/components/homepage/BlogSection';
 import FooterSection from '@/components/homepage/FooterSection';
 // import BlogsCard from './blog/components/common/BlogsCard';
+// =======
+// import { Table } from 'lucide-react';
+// >>>>>>> 7b42b12a9a0f4088be09aaca2f9d1c2b6c6c192a
 
 export default function Home() {
   return (
@@ -16,9 +19,14 @@ export default function Home() {
       <AboutSection />
       <FeaturesSection />
       <MembershipSection />
+{/* <<<<<<< HEAD */}
       {/* <BlogSection />   */}
       
   
+// =======
+      {/* // <BlogSection />  */}
+    {/* <Table/> */}
+{/* >>>>>>> 7b42b12a9a0f4088be09aaca2f9d1c2b6c6c192a */}
     </div>
   );
 }
