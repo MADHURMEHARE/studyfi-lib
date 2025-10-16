@@ -19,7 +19,8 @@ export default function SimpleNavigation() {
       { id: 'home', label: 'Home', route: '/' },
       { id: 'blog', label: 'Student', route: '/blog' },
       { id: 'timing', label: 'Timing', route: '/timing' },
-      { id: 'contact', label: 'Contact', route: '/contact' },
+      { id: 'contact', label: 'Contact', route: '/contact' }, 
+      { id: 'auth', label: 'auth', route: '/auth' },
       
     ],
     []

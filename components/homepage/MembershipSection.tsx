@@ -1,5 +1,6 @@
 
  import { plans } from '@/components/homepage/utils/data/DATA';
+ import { Card } from '../common/Card';
 
 export default function MembershipSection() {
 
@@ -50,6 +51,15 @@ export default function MembershipSection() {
           ))}
         </div>
       </div>
+      <Card
+      icon= "DynamicIcon" // The icon prop can be a component or a string
+    title=" madhur " 
+    description="abdjfdanc" 
+    bgColor="nadhcdhc " 
+    iconColor=""
+    variant = 'feature' 
+
+      />
     </section>
   );
 }

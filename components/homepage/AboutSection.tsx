@@ -72,7 +72,7 @@ interface DigitalSovereigntySectionProps {
   autoCycleInterval?: number; // NEW PROP for auto-cycle
 }
 
-export default function DigitalSovereigntySection({
+export default function AboutSection({
   className = '',
   id = 'value',
   title = 'AMRAVATI S BEST STUDY SPACE 🥇',

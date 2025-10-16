@@ -84,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navigation />
           {children}
           <FooterSection />
-          <Toaster position="top-right" />
+          {/* <Toaster position="top-right" /> */}
         </AuthProvider>
       </body>
     </html>
