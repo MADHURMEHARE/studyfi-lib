@@ -4,7 +4,7 @@ export const blogPosts = [
     slug: "khushali",
     imageSrc: "/uploads/khushali.png",
     imageAlt: "Khushali",
-    title: "Khushali K (Success Story) — Cleared All Banking Exams",
+    title: "Khushali K (Success Story) ",
     description: "Read how Khushali conquered all major banking exams with consistency and focus.",
     content: `
       Selection: Ibps clerk, Sbi JA, Ubi officer, Uiic administrative officer 
