@@ -1,7 +1,9 @@
 // src/components/BlogCard.tsx
+"use client"
 
 import Image from 'next/image';
 import Link from 'next/link';
+import BlogPage from '../page';
 
 type CardSize = 'main' | 'side';
 
@@ -11,11 +13,11 @@ interface BlogCardProps {
   title: string;
   description: string;
   linkHref: string;
-  linkText?: string;
-  // make size optional and provide a default below
-  size?: CardSize;
+   linkText?: string;
+   
+  size?: 'main' | 'side';
+  slug: string; 
 }
-
 export default function BlogCard({
   imageSrc,
   imageAlt,
@@ -23,6 +25,7 @@ export default function BlogCard({
   description,
   linkHref,
   linkText = 'Read More',
+  slug,  
   size = 'side',
 }: BlogCardProps) {
   // --- Grid Layouts ---
@@ -79,15 +82,16 @@ export default function BlogCard({
           <p className={descClasses}>{description}</p>
         </div>
 
-        <Link
-          href={linkHref}
-          className={`${linkClasses} flex items-center group transition-colors`}
-        >
-          {linkText}
-          <span className="ml-1 transition-transform group-hover:translate-x-1">
-            &gt;
-          </span>
-        </Link>
+       <Link
+  href={`/blog/${slug}`}
+  className={`${linkClasses} flex items-center group transition-colors`}
+>
+  {linkText}
+  <span className="ml-1 transition-transform group-hover:translate-x-1">
+    &gt;
+  </span>
+</Link>
+
       </div>
     </div>
   );

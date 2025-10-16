@@ -29,7 +29,7 @@ export default function Home() {
       <AboutSection />
       <FeaturesSection />
       <MembershipSection />
-      <FooterSection />
+      {/* <FooterSection /> */}
       {/* <Searchbar/> */}
     </div>
   );
