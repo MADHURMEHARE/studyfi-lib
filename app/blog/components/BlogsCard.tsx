@@ -3,7 +3,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import BlogPage from '../page';
 
 type CardSize = 'main' | 'side';
 
@@ -12,11 +11,11 @@ interface BlogCardProps {
   imageAlt: string;
   title: string;
   description: string;
-  linkHref: string;
-   linkText?: string;
-   
+  // linkHref is optional; if not provided we build href from slug
+  linkHref?: string;
+  linkText?: string;
   size?: 'main' | 'side';
-  slug: string; 
+  slug: string;
 }
 export default function BlogCard({
   imageSrc,
@@ -82,15 +81,15 @@ export default function BlogCard({
           <p className={descClasses}>{description}</p>
         </div>
 
-       <Link
-  href={`/blog/${slug}`}
-  className={`${linkClasses} flex items-center group transition-colors`}
->
-  {linkText}
-  <span className="ml-1 transition-transform group-hover:translate-x-1">
-    &gt;
-  </span>
-</Link>
+        <Link
+          href={linkHref ?? `/blog/${slug}`}
+          className={`${linkClasses} flex items-center group transition-colors`}
+        >
+          {linkText}
+          <span className="ml-1 transition-transform group-hover:translate-x-1">
+            &gt;
+          </span>
+        </Link>
 
       </div>
     </div>

@@ -59,4 +59,5 @@ My Final Word: Effort is Unintentional Hardwork
 For anyone out there who belongs to a poor family or feels financially weak like I did, you haven't any excuses. There’s only one consistent message: give your 100% efforts. Whatever results you get, accept and move on. This success is a testament to the power of showing up, day after day, and pouring your whole self into the process.
     `,
   },
+  
 ];
