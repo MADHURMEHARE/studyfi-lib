@@ -32,7 +32,7 @@ export default function HeroSection({
     
     <section
       id="hero"
-      className="min-h-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden mt-20"
+      className="min-h-screen  max-w-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden mt-20"
       style={{
         background: !videoUrl
           ? 'linear-gradient(to bottom right, #FFEDD5, #FFFFFF, #FFEDD5)'
@@ -49,7 +49,7 @@ export default function HeroSection({
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-70 z-0"
         >
-          <source src={videoUrl} type="video/mp4" />
+          {/* <source src={videoUrl} type="video/mp4" /> */}
           Your browser does not support the video tag.
         </video>
       )}

@@ -1,5 +1,5 @@
 "use client";
-import { blogPosts } from "../utils/constent";
+import { blogPosts } from "../../../utils/blogdata";
 
 interface BlogPageProps {
   params: { slug: string };

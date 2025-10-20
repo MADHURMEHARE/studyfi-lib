@@ -8,7 +8,30 @@
   }
 }
 
+/* 🚀 ANIMATION FIX: Define the custom keyframes for the card entry animation */
+@keyframes card-entry {
+  0% {
+    opacity: 0;
+    /* Start slightly below its final position */
+    transform: translateY(20px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @layer components {
+  /* 🚀 ANIMATION FIX: Define the custom class used in the PricingCard component */
+  .animate-card-fade-in {
+    animation-name: card-entry;
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+    /* Easing for smoother motion */
+    animation-timing-function: ease-out; 
+    /* The animation-delay is applied dynamically via inline style in the JSX */
+  }
+
   .btn {
     @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
   }
@@ -49,4 +72,3 @@
     @apply bg-red-100 border-red-300 text-red-800 cursor-not-allowed;
   }
 }
-
