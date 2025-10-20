@@ -3,7 +3,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useState, useMemo } from 'react';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
-// import { Searchbar } from '../search/Searchbar';
+import { Searchbar } from '../search/Searchbar';
 
 export default function SimpleNavigation() {
   const router = useRouter();
@@ -19,8 +19,8 @@ export default function SimpleNavigation() {
       { id: 'home', label: 'Home', route: '/' },
       { id: 'blog', label: 'Student', route: '/blog' },
       { id: 'timing', label: 'Timing', route: '/timing' },
-      // { id: 'contact', label: 'Contact', route: '/contact' }, 
-      // { id: 'auth', label: 'auth', route: '/auth' },
+      { id: 'contact', label: 'Contact', route: '/contact' }, 
+      { id: 'auth', label: 'auth', route: '/auth' },
       
     ],
     []
@@ -44,10 +44,10 @@ export default function SimpleNavigation() {
 
   return (
     <>
-      <nav className="fixed max-w-screen top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-orange-200">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-orange-200">
         <div className="flex justify-between items-center h-20 px-4 md:px-10 lg:px-20">
           {/* Logo - Navigates to home */}
-     
+      <Searchbar/>
 
           
             <div className="relative">

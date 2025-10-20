@@ -1,5 +1,5 @@
 // src/components/BlogCard.tsx
-"use client";
+"use client"
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,12 +11,12 @@ interface BlogCardProps {
   imageAlt: string;
   title: string;
   description: string;
+  // linkHref is optional; if not provided we build href from slug
   linkHref?: string;
   linkText?: string;
-  size?: CardSize;
+  size?: 'main' | 'side';
   slug: string;
 }
-
 export default function BlogCard({
   imageSrc,
   imageAlt,
@@ -24,19 +24,19 @@ export default function BlogCard({
   description,
   linkHref,
   linkText = 'Read More',
-  slug,
+  slug,  
   size = 'side',
 }: BlogCardProps) {
-  // --- Container Styles ---
+  // --- Grid Layouts ---
   const containerClasses =
     size === 'main'
-      ? 'grid md:grid-cols-[2fr_3fr] rounded-2xl overflow-hidden shadow-xl bg-white max-w-6xl mx-auto my-12 hover:shadow-2xl transition-shadow duration-300'
-      : 'grid grid-cols-[auto_1fr] rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white w-full max-w-md mx-auto my-4';
+      ? 'grid md:grid-cols-[2fr_3fr] rounded-xl overflow-hidden shadow-lg bg-white max-w-6xl mx-auto my-20'
+      : 'grid grid-cols-[auto_1fr] bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg w-full max-w-md mx-auto my-3';
 
-  // --- Image Styles ---
+  // Image wrapper
   const imageWrapperClasses =
     size === 'main'
-      ? 'relative w-full aspect-video md:aspect-auto md:h-full'
+      ? 'relative w-full aspect-[16/9] md:aspect-auto md:h-full'
       : 'relative w-28 h-28';
 
   const imageSizes =
@@ -44,27 +44,26 @@ export default function BlogCard({
       ? '(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 60vw'
       : '112px';
 
-  // --- Typography ---
+  // Typography
   const titleClasses =
     size === 'main'
-      ? 'text-2xl md:text-3xl font-bold text-gray-900 mb-3'
-      : 'text-lg font-semibold text-gray-800 mb-1 line-clamp-2';
+      ? 'text-2xl md:text-3xl font-semibold text-gray-900 mb-3'
+      : 'text-base font-bold text-gray-800 mb-1 leading-tight';
 
   const descClasses =
     size === 'main'
-      ? 'text-gray-700 text-base md:text-lg leading-relaxed mb-6'
-      : 'text-gray-600 text-sm leading-snug line-clamp-3';
+      ? 'text-gray-600 text-base leading-relaxed mb-6'
+      : 'text-gray-600 text-sm leading-snug mb-2 line-clamp-2';
 
-  // --- Padding & Link ---
-  const contentPadding = size === 'main' ? 'p-6 md:p-8' : 'p-3 md:p-4';
+  const contentPadding = size === 'main' ? 'p-6 md:p-8' : 'p-3';
   const linkClasses =
     size === 'main'
-      ? 'text-purple-600 font-semibold hover:text-purple-900 inline-flex items-center gap-1 transition-all duration-300'
-      : 'text-purple-600 hover:text-purple-900 text-sm font-semibold inline-flex items-center gap-1 transition-all duration-300';
+      ? 'text-purple-700 font-semibold hover:text-purple-900'
+      : 'text-purple-700 hover:text-purple-900 text-sm font-semibold';
 
   return (
     <div className={containerClasses}>
-      {/* Image */}
+      {/* --- Left: Image --- */}
       <div className={imageWrapperClasses}>
         <Image
           src={imageSrc}
@@ -72,11 +71,10 @@ export default function BlogCard({
           fill
           className="object-cover"
           sizes={imageSizes}
-          priority={size === 'main'} // Main card loads faster
         />
       </div>
 
-      {/* Content */}
+      {/* --- Right: Content --- */}
       <div className={`${contentPadding} flex flex-col justify-between`}>
         <div>
           <h3 className={titleClasses}>{title}</h3>
@@ -85,10 +83,14 @@ export default function BlogCard({
 
         <Link
           href={linkHref ?? `/blog/${slug}`}
-          className={linkClasses}
+          className={`${linkClasses} flex items-center group transition-colors`}
         >
-          {linkText} <span className="transition-transform group-hover:translate-x-1">&gt;</span>
+          {linkText}
+          <span className="ml-1 transition-transform group-hover:translate-x-1">
+            &gt;
+          </span>
         </Link>
+
       </div>
     </div>
   );

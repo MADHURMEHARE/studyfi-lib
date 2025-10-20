@@ -1,6 +1,5 @@
-// import BlogCard from '../comman/components/BlogsCard';
-import BlogCard from '../../components/common/BlogsCard';
-import {blogPosts} from '../../utils/blogdata';
+import BlogCard from './components/BlogsCard';
+import { blogPosts } from './utils/constent';
 
 export default function BlogPage() {
   return (
@@ -11,7 +10,7 @@ export default function BlogPage() {
           imageSrc={post.imageSrc}
           imageAlt={post.imageAlt}
           title={post.title}
-        //  linkHref={`/blog/${post.slug}`}
+           linkHref= {post.slug}
           description={post.description}
           slug={post.slug}   // 👈 pass slug here
           size="main"

@@ -1,9 +1,6 @@
 // app/api/blogs/route.ts
 import { NextResponse } from "next/server";
 
-
-
-
 const blogPosts = [
   {
     id: 1,
