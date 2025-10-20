@@ -4,7 +4,7 @@ import AboutSection from '@/components/homepage/AboutSection';
 import FeaturesSection from '@/components/homepage/FeaturesSection';
 import MembershipSection from '@/components/homepage/MembershipSection';
 import FooterSection from '@/components/homepage/FooterSection';
-import { heroFeatures,features } from '@/components/homepage/utils/data/DATA';
+import { heroFeatures,features } from '@/utils/DATA';
 // import {Searchbar} from '@/components/homepage/Searchbar';
 export default function Home() {
   

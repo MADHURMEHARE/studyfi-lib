@@ -1,5 +1,5 @@
 
- import { plans } from '@/components/homepage/utils/data/DATA';
+ import { plans } from '@/utils/DATA';
 //  import { Card } from '../common/Card';
 
 export default function MembershipSection() {

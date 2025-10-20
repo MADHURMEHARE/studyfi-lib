@@ -1,6 +1,6 @@
 import { Snowflake, Users, Droplets, MessageSquare, Wifi, Car } from 'lucide-react';
 // import {feature}
- import { features} from '@/components/homepage/utils/data/DATA';
+ import { features} from '@/utils/DATA';
 
 export default function FeaturesSection() {
  
