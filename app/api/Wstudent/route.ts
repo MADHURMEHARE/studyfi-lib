@@ -1,7 +1,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
-import { student } from "@/utils/Student";
 
+import { student } from "@/utils/Student";
 
 
 export async function GET(req: NextRequest) {

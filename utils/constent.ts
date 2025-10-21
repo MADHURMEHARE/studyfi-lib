@@ -42,7 +42,7 @@ Hi, I'm Gaurav Narnaware. When I look back at my two and a half years of prep, t
 In March 2025, that long journey paid off when I secured my admission to Symbiosis International. My scores reflect not brilliance, but consistency: 99.2%ile in MBA-CET, 97.6%ile in SNAP, 93.2%ile in XAT, and 87.6%ile in CAT.
 
 When Life Hits Hard: Managing Crisis and Quants
-If the exams were difficult, life’s timing was brutal. The true test of my resilience came when my father suffered a paralysis stroke. Suddenly, I wasn't just a student; I was a caregiver. I had to manage his health and my rigorous study schedule, and the emotional toll was immense.
+If the exams were difficult, life s timing was brutal. The true test of my resilience came when my father suffered a paralysis stroke. Suddenly, I wasn't just a student; I was a caregiver. I had to manage his health and my rigorous study schedule, and the emotional toll was immense.
 
 Honestly, "The journey was like a rollercoaster." I poured in countless hours, only to see the results stay exactly the same. That’s when the self-doubt would creep in. I used to spend hours just thinking and talking to myself, often falling into overthinking spirals. But I realized that tendency to overthink was actually a strength—it meant I cared deeply. I channeled that analytical intensity into understanding every single aspect of my preparation and the complex situation I was in. That struggle to manage both roles is the real victory here.
 

@@ -1,0 +1,47 @@
+export const plans = [
+    {
+      name: "Half_Time",
+      description: "Ideal for students who need a quiet place to study for a few hours each day with essential facilities.",
+      monthlyPrice: "₹400",
+      yearlyPrice: "",
+      features: [
+        "Wi-Fi access",
+        "No seat reservation",
+        "No air conditioning",
+        "Parking access",
+      ],
+      buttonText: "Click to Register",
+      buttonClass: "bg-white text-gray-800 border-2 border-gray-300 hover:bg-gray-100",
+      isPopular: false,
+    },
+    {
+      name: "Full_Time",
+      description: "Best for serious aspirants who want full-day access with reserved seating and comfortable study conditions.",
+      monthlyPrice: "₹700",
+      yearlyPrice: "",
+      features: [
+        "Wi-Fi access",
+        "Reserved seating",
+        "Air-conditioned hall",
+        "Parking access",
+      ],
+      buttonText: "Click to Register",
+      buttonClass: "bg-orange-600 text-white hover:bg-orange-700",
+      isPopular: true,
+    },
+    {
+      name: "3-Month_Plan",
+      description: "Perfect for dedicated learners looking for long-term, uninterrupted study access with all premium facilities.",
+      monthlyPrice: "₹1800",
+      yearlyPrice: "",
+      features: [
+        "Wi-Fi access",
+        "Reserved seating",
+        "Air-conditioned hall",
+        "Parking access",
+      ],
+      buttonText: "Join Now",
+      buttonClass: "bg-white text-gray-800 border-2 border-gray-300 hover:bg-gray-100",
+      isPopular: false,
+    },
+  ];

@@ -2,7 +2,7 @@ import { Calendar } from 'lucide-react';
 
 interface PlanCardProps {
   plan: {
-    id: string;
+    // id: string;
     name: string;
     price: number;
     duration: string;

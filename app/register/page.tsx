@@ -6,6 +6,8 @@ import { ArrowLeft, MapPin, User, Mail, Phone, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 import ProtectedButton from '@/components/shared/ProtectedButton';
+// import PlanCard from '@/components/registration/PlanCard';
+// import PlanCard from '@/components/registration/PlanCard';
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -126,7 +128,16 @@ export default function RegisterPage() {
                     />
                   </div>
                 </div>
-
+{/* plan card */}
+                                         {/* <PlanCard
+        id =""
+    name =""
+    price = " "
+    duration =  ""
+    description =""
+    features=""
+    // isPopular?: boolean;
+                                         /> */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number *
@@ -249,4 +260,4 @@ export default function RegisterPage() {
       </div>
     </div>
   );
-}
+} 

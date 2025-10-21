@@ -78,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           
         </Script>
       </head>
-      <body className={inter.className}>
+      <body >
         <AuthProvider>
           {/* Navigation on top */}
           <Navigation />
