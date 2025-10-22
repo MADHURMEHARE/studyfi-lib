@@ -6,8 +6,8 @@ import MembershipSection from '@/components/homepage/MembershipSection';
 import FooterSection from '@/components/homepage/FooterSection';
 import { heroFeatures } from '@/utils/DATA';
 import StudentList from '@/components/common/Studentlist';
-import ScrollPerspectiveWrapper from '@/components/common/ScrollPerspectiveWrapper'; 
-
+import ScrollPerspectiveWrapper from '@/components/common/ScrollPerspectiveWrapper';
+import FeaturesSection from "components/homepage/FeaturesSection"
 export default function Home() {
   return (
     // Removed the outer 'flex min-h-screen w-full' to ensure standard body scrolling is used.
@@ -30,19 +30,22 @@ export default function Home() {
           />
 
           {/* Inner Content Block */}
-          <div className="py-12 px-4 max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-4">
-              Inside the Journey of High-Achieving Students
-            </h2>
-            <p className="text-lg md:text-xl text-center text-gray-600 mb-10">
-              Real stories, strategies, and struggles to guide your preparation. Learn how top students overcame challenges and excelled in competitive exams.
-            </p>
-            <div className="space">
-              <StudentList />
-            </div>
-          </div>
+         <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-4 tracking-tight">
+        Inside the Journey of High-Achieving Students
+    </h2>
+    <p className="text-base sm:text-lg md:text-xl text-center text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+        Real stories, strategies, and struggles to guide your preparation. Learn how top students overcame challenges and excelled in competitive exams.
+    </p>
+    <div className="space">
+        <StudentList />
+    </div>
+</div>
+
    <div className="w-screen">
           <AboutSection />
+</div><div className="w-screen">
+          <FeaturesSection/>
 </div>
  <div className="w-screen">
           <MembershipSection />
