@@ -1,6 +1,8 @@
 export const blogPosts = [
   {
     id: 1,
+    author:"khushali",
+    date:"20/10/25",
     slug: "khushali",
     imageSrc: "/uploads/khushali.png",
     imageAlt: "Khushali",
@@ -29,8 +31,10 @@ Optional personal note: Determination is myth, discipline is a way to go. Keep u
   },
   {
     id: 2,
+    author:"gaurav",
+    date:"20/10/25",
     slug: "gaurav",
-    imageSrc: "/uploads/Gaurav.png",
+    imageSrc: "/uploads/gaurav.png",
     imageAlt: "Gaurav",
     title: "Gaurav Narnaware — The Journey of Dedication Over Talent",
     description: "Gaurav cracked multiple MBA and Banking exams while managing personal challenges.",
