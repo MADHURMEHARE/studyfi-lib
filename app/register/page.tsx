@@ -7,7 +7,9 @@ import Image from 'next/image';
 import toast from 'react-hot-toast';
 import Head from 'next/head';
 import Script from 'next/script';
-import { event } from '@/lib/gtag';
+// import { event } from '@/lib/gtag';
+import { event, pageview } from '@/lib/gtag';
+
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({

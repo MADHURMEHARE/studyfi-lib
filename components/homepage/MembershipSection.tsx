@@ -3,7 +3,9 @@
 import { useState, useEffect, useRef, CSSProperties } from "react";
 import { plans } from "@/utils/pricingplans";
 import Link from "next/link";
-import { event } from "@/lib/gtag"; // <-- Make sure you have this helper
+// import { event } from "@/lib/gtag"; // <-- Make sure you have this helper
+import { event, pageview } from '@/lib/gtag';
+
 
 export default function MembershipSection() {
   const [isYearly, setIsYearly] = useState(false);
