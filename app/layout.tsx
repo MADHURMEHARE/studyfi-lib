@@ -5,6 +5,7 @@ import { AuthProvider } from "@/lib/auth-context";
 import Navigation from "@/components/shared/Navigation";
 import FooterSection from "@/components/homepage/FooterSection";
 import Script from "next/script";
+import Analytics from "./Analytics";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -85,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={inter.className}>
         <AuthProvider>
+            <Analytics />
           <Navigation />
           {children}
           <FooterSection />
