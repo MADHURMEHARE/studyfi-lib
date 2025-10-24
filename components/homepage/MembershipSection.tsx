@@ -1,8 +1,9 @@
-"use client";
+'use client';
 
 import { useState, useEffect, useRef, CSSProperties } from "react";
 import { plans } from "@/utils/pricingplans";
 import Link from "next/link";
+import { event } from "@/lib/gtag"; // <-- Make sure you have this helper
 
 export default function MembershipSection() {
   const [isYearly, setIsYearly] = useState(false);
@@ -86,12 +87,6 @@ export default function MembershipSection() {
             <p className="text-lg text-gray-700 mb-8 max-w-md lg:mx-0 mx-auto">
               Flexible study plans for every learner. Choose the one that fits your routine and start today.
             </p>
-            <div className="mt-12 lg:max-w-sm lg:mx-0 mx-auto">
-              <h4 className="text-lg font-semibold text-gray-800 mb-4">Payment Methods</h4>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                {/* Payment icons can go here */}
-              </div>
-            </div>
           </div>
 
           {/* Right Pricing Cards */}
@@ -102,7 +97,16 @@ export default function MembershipSection() {
                 {["Monthly", "Yearly"].map((type, idx) => (
                   <button
                     key={type}
-                    onClick={() => setIsYearly(idx === 1)}
+                    onClick={() => {
+                      setIsYearly(idx === 1);
+
+                      // Track GA4 toggle event
+                      event({
+                        action: "click",
+                        category: "membership_toggle",
+                        label: idx === 1 ? "Yearly" : "Monthly",
+                      });
+                    }}
                     className={`px-8 py-3 rounded-full text-lg font-semibold transition duration-300 ${
                       (idx === 1 ? isYearly : !isYearly)
                         ? "bg-orange-600 text-white"
@@ -151,49 +155,23 @@ export default function MembershipSection() {
                   </p>
 
                   <ul className="space-y-3 mb-10">
-                    {plan.features.map((feature, i) => {
-                      const isComing = feature.includes("Coming soon");
-                      return (
-                        <li key={i} className="flex items-center text-sm">
-                          <svg
-                            className={`w-4 h-4 mr-2 ${
-                              plan.isPopular ? (isComing ? "text-indigo-400" : "text-green-400") : isComing ? "text-gray-400" : "text-orange-500"
-                            }`}
-                            fill={isComing ? "none" : "currentColor"}
-                            stroke={isComing ? "currentColor" : "none"}
-                            viewBox="0 0 24 24"
-                          >
-                            {isComing ? (
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                              />
-                            ) : (
-                              <path
-                                fillRule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                clipRule="evenodd"
-                              />
-                            )}
-                          </svg>
-                          {isComing ? (
-                            <span className={`${plan.isPopular ? "text-indigo-300" : "text-gray-500"} line-through`}>
-                              {feature.replace(" Coming soon", "")}
-                            </span>
-                          ) : (
-                            feature
-                          )}
-                          {isComing && <span className="ml-1 text-xs text-orange-400">Coming soon</span>}
-                        </li>
-                      );
-                    })}
+                    {plan.features.map((feature, i) => (
+                      <li key={i} className="flex items-center text-sm">
+                        {feature}
+                      </li>
+                    ))}
                   </ul>
 
                   <Link href={`/register?plan=${plan.name}`}>
                     <button
-                      onClick={() => console.log(`Choosing ${plan.name} plan`)}
+                      onClick={() =>
+                        event({
+                          action: "click",
+                          category: "membership_plan_click",
+                          label: plan.name,
+                          // value: isYearly ? plan.yearlyPrice : plan.monthlyPrice,
+                        })
+                      }
                       className={`w-full py-3 rounded-xl font-semibold text-base transition duration-300 ${
                         plan.isPopular
                           ? "bg-orange-500 hover:bg-orange-600 text-white"

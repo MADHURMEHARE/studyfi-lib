@@ -7,7 +7,7 @@ import Image from 'next/image';
 import toast from 'react-hot-toast';
 import Head from 'next/head';
 import Script from 'next/script';
-import ProtectedButton from '@/components/shared/ProtectedButton';
+import { event } from '@/lib/gtag';
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -41,6 +41,13 @@ export default function RegisterPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Track GA4 click event for submission
+    event({
+      action: "click",
+      category: "registration",
+      label: "Complete Registration Button",
+    });
 
     try {
       // Simulate API call
@@ -227,7 +234,16 @@ export default function RegisterPage() {
                           ? 'border-orange-500 bg-orange-50'
                           : 'border-gray-200 hover:border-orange-300'
                       }`}
-                      onClick={() => setFormData(prev => ({ ...prev, selectedPlan: plan.id }))}
+                      onClick={() => {
+                        setFormData(prev => ({ ...prev, selectedPlan: plan.id }));
+                        // Track GA4 event for plan selection
+                        event({
+                          action: "click",
+                          category: "registration",
+                          label: `Selected Plan: ${plan.name}`,
+                          value: plan.price
+                        });
+                      }}
                     >
                       <h4 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h4>
                       <p className="text-3xl font-bold text-orange-600 mb-2">₹{plan.price}</p>
@@ -252,7 +268,15 @@ export default function RegisterPage() {
                           ? 'border-orange-500 bg-orange-500 text-white'
                           : 'border-gray-200 hover:border-orange-300'
                       }`}
-                      onClick={() => setFormData(prev => ({ ...prev, selectedSeat: seat.toString() }))}
+                      onClick={() => {
+                        setFormData(prev => ({ ...prev, selectedSeat: seat.toString() }));
+                        // Track GA4 event for seat selection
+                        event({
+                          action: "click",
+                          category: "registration",
+                          label: `Selected Seat: ${seat}`,
+                        });
+                      }}
                     >
                       {seat}
                     </div>
