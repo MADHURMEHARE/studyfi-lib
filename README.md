@@ -143,7 +143,7 @@ This project is open source and available under the MIT License.
 3. Make your changes
 4. Test thoroughly
 5. Submit a pull request
+#live www.studyfilibrary.com
 
----
 
 **Note**: This is a frontend demo with sample data. All changes are temporary and will reset on page refresh.
