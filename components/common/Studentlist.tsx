@@ -29,7 +29,7 @@ export default function StudentList() {
   const currentStudents = students.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className="max-w-6xl mx-auto p-4 md:p-8">
+    <div className=" mx-auto p-4 md:p-8">
       {/* 🔍 Search & Category Filter */}
       <div className="flex flex-col md:flex-row gap-4 mb-8">
         <input

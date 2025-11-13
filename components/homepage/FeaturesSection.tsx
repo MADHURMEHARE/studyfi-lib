@@ -131,7 +131,7 @@ const AnimatedFeatureCard: React.FC<{ feature: Feature; index: number }> = ({ fe
 const AmenitiesSection: React.FC = () => {
   return (
     // Updated background color to red-900 (based on your latest input)
-    <div className="bg-red-900 text-white font-sans py-20 px-4 sm:px-8 lg:px-16 flex flex-col items-center">
+    <div className="bg-900 text-white font-sans py-20 px-4 sm:px-8 lg:px-16 flex flex-col items-center">
       
       {/* Header and Title */}
       <div 

@@ -13,7 +13,7 @@ export default function Home() {
     // Removed the outer 'flex min-h-screen w-full' to ensure standard body scrolling is used.
     // The browser's main scrollbar should now control the content.
     <>
-    <div className="w-screen "> 
+    <div className="w-screen  "> 
       
       {/* 1. Sidebar (It's fixed/floating, so it doesn't need to be in the flow) */}
 {/*       <SidebarNavigation /> */}
@@ -30,11 +30,11 @@ export default function Home() {
           />
 
           {/* Inner Content Block */}
-         <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-4 tracking-tight">
+         <div className="py-16 px-4 sm:px-6 lg:px-8  mx-auto">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-black-900 mb-4 tracking-tight">
         Inside the Journey of High-Achieving Students
     </h2>
-    <p className="text-base sm:text-lg md:text-xl text-center text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+    <p className="text-base sm:text-lg md:text-xl text-center text-black  mb-12 max-w-4xl mx-auto leading-relaxed">
         Real stories, strategies, and struggles to guide your preparation. Learn how top students overcame challenges and excelled in competitive exams.
     </p>
     <div className="space">
@@ -42,12 +42,12 @@ export default function Home() {
     </div>
 </div>
 
-   <div className="w-screen">
+   <div className="w-screen bg-orange-800">
           <AboutSection />
-</div><div className="w-screen">
+</div><div className="w-screen bg-red-800">
           <FeaturesSection/>
 </div>
- <div className="w-screen">
+ <div className="w-screen bg-white">
           <MembershipSection />
 </div>
 {/*           <FooterSection />  */}

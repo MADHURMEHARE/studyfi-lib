@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Globe, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-
+import {Text} from "components/common/Text"
 // --- CTALink Placeholder ---
 const CTALink: React.FC<{ href: string; text: string; theme: "dark" | "light" }> = ({
   href,
@@ -42,15 +42,20 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   theme,
 }) => {
   const isDark = theme === "dark";
-  const titleColor = isDark ? "text-white" : "text-gray-900";
-  const subtitleColor = isDark ? "text-gray-300" : "text-gray-700";
-  const descriptionColor = isDark ? "text-gray-400" : "text-gray-600";
+  const titleColor = isDark ? "text-white" : "text-white";
+  const subtitleColor = isDark ? "text-white" : "text-white";
+  const descriptionColor = isDark ? "text-white" : "text-white";
 
   return (
     <header className="space-y-4" data-aos="fade-up" data-aos-duration="1000">
       <div className="flex items-center space-x-2 text-sm font-semibold text-orange-400">
         <Globe className="w-5 h-5 text-orange-500" />
-        <span className="uppercase tracking-widest">{badge}</span>
+     <Text
+     color="black"
+     align="center"
+     >
+    
+  {badge}</Text>
       </div>
       <h2 className={`text-4xl sm:text-5xl font-extrabold leading-tight ${titleColor}`}>
         {title}
@@ -121,7 +126,7 @@ export default function AboutSection({
   }, [images.length, autoCycleInterval]);
 
   return (
-    <section id={id} className={`${className} relative w-full py-20 lg:py-32 ${sectionBg} overflow-hidden`}>
+    <section id={id} className={`${className} relative w-full py-20 lg:py-32  overflow-hidden`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center w-full gap-12 lg:gap-16">
 
@@ -133,6 +138,8 @@ export default function AboutSection({
               subtitle={subtitle}
               description={description}
               theme={theme}
+              // titlecolor="white"
+              
             />
             {showCTA && (
               <div className="mt-4" data-aos="fade-up" data-aos-delay="400">

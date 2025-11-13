@@ -65,9 +65,9 @@ export default function MembershipSection() {
     <section
       id="membership"
       ref={sectionRef}
-      className="py-20 bg-gradient-to-br from-white via-orange-50 to-orange-100 relative overflow-hidden font-sans"
+      className="py-20  relative overflow-hidden font-sans"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12">
 
           {/* Left Text Section */}

@@ -44,8 +44,8 @@ export default function SimpleNavigation() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-orange-200">
-        <div className="flex justify-between items-center h-20 px-4 md:px-10 lg:px-20">
+      <nav className="fixed border-2px top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-orange-200">
+        <div className="flex justify-between items-center px-4 md:px-10 lg:px-20">
           {/* Logo - Navigates to home */}
       {/* <Searchbar/> */}
 
