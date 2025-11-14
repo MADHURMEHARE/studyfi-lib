@@ -8,6 +8,7 @@ import { heroFeatures } from '@/utils/DATA';
 import StudentList from '@/components/common/Studentlist';
 import ScrollPerspectiveWrapper from '@/components/common/ScrollPerspectiveWrapper';
 import FeaturesSection from "components/homepage/FeaturesSection"
+import VideosSection from '@/components/homepage/videosec/video';
 export default function Home() {
   return (
     // Removed the outer 'flex min-h-screen w-full' to ensure standard body scrolling is used.
@@ -41,7 +42,7 @@ export default function Home() {
         <StudentList />
     </div>
 </div>
-
+{/* <VideosSection/> */}
    <div className="w-screen bg-orange-800">
           <AboutSection />
 </div><div className="w-screen bg-red-800">

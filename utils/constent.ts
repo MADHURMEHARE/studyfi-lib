@@ -4,7 +4,7 @@ export const blogPosts = [
     author:"khushali",
     date:"20/10/25",
     slug: "khushali",
-    imageSrc: "/uploads/khushali.png",
+    imageSrc: "/uploads/khushali.svg",
     imageAlt: "Khushali",
     title: "Khushali K (Success Story) ",
     description: "Read how Khushali conquered all major banking exams with consistency and focus.",

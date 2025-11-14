@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // App directory is enabled by default in Next.js 14
-}
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      issuer: /\.[jt]sx?$/,
+      use: ["@svgr/webpack"],
+    });
 
-module.exports = nextConfig
+    return config;
+  },
+};
+
+module.exports = nextConfig;

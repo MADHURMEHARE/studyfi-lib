@@ -3,6 +3,7 @@
 import { MapPin } from 'lucide-react';
 import ProtectedButton from '../shared/ProtectedButton';
 import { useState, useEffect } from 'react';
+import PhoneCapture from '../phoneCapture';
 
 interface Feature {
   icon: string; // Emoji or JSX
@@ -43,6 +44,7 @@ export default function HeroSection({
       return () => window.removeEventListener('scroll', handleScroll);
     }
   }, []);
+  
 
   // Calculate dynamic styles based on scrollY
   const backgroundParallax = offsetY * 0.4; // Slower background
@@ -61,36 +63,48 @@ export default function HeroSection({
   return (
     <section className="relative w-full min-h-screen overflow-hidden text-white flex items-center justify-center">
       {/* Background Layer - Deep Parallax, Subtle Zoom, and Blur */}
-      <div
-        className="absolute inset-0 z-0 transition-transform duration-75 ease-out"
-        style={{
-          transform: `translateY(${backgroundParallax}px) scale(${scaleAmount})`,
-          filter: `blur(${blurAmount}px)`,
-        }}
-      >
-        {bgImageUrl && (
-          <>
-            <img
-              src={bgImageUrl}
-              alt="Hero Background"
-              className="w-full h-full object-cover object-center animate-scale-hero"
-            />
-            <div className="absolute inset-0 bg-black/50 mix-blend-multiply"></div> {/* Darker overlay */}
-          </>
-        )}
+     <div
+  className="absolute inset-0 z-0 transition-transform duration-75 ease-out"
+  style={{
+    transform: `translateY(${backgroundParallax}px) scale(${scaleAmount})`,
+    filter: `blur(${blurAmount}px)`,
+  }}
+>
+  {/* Rounded, padded container */}
+  <div className="w-full h-full p-10 md:p-20">
+    <div className="w-full h-full rounded-3xl overflow-hidden relative shadow-2xl">
 
-        {videoUrl && (
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-80"
-          >
-            <source src={videoUrl} type="video/mp4" />
-          </video>
-        )}
-      </div>
+      {/* Background Image */}
+      {bgImageUrl && (
+        <>
+          <img
+            src={bgImageUrl}
+            alt="Hero Background"
+            className="w-full h-full object-cover object-center animate-scale-hero"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/50 mix-blend-multiply"></div>
+        </>
+      )}
+
+      {/* Background Video */}
+      {videoUrl && (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
+        >
+          <source src={videoUrl} type="video/mp4" />
+        </video>
+      )}
+
+    </div>
+  </div>
+</div>
+
 
       {/* Hero Content - Moves faster than background, fades out */}
       <div
@@ -132,7 +146,7 @@ export default function HeroSection({
         </p>
 
         {/* Features Grid - Lifts up and moves slightly slower */}
-        <div
+        {/* <div
           className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl w-full mx-auto transition-transform duration-75 ease-out"
           style={{ transform: `translateY(-${featuresParallax}px)` }}
         >
@@ -147,9 +161,49 @@ export default function HeroSection({
               <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
             </div>
-          ))}
-        </div>
-      </div>
+          ))} */}
+         {/* </div> */}
+      </div> 
+{/* Semi-circle bottom center */}
+<div
+  className="
+    absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2
+    w-[360px] h-[200px]
+    bg-gradient-to-b from-white via-white/90 to-white/70
+    rounded-t-full
+    shadow-2xl border border-white/20
+    backdrop-blur-xl
+    animate-floating
+    flex flex-col items-center justify-center
+    px-6
+  "
+>
+  {/* Glow Ring */}
+  <div className="absolute inset-0 rounded-t-full bg-white/30 blur-xl pointer-events-none"></div>
+
+  {/* Title */}
+  <h1 className="text-gray-800 text-xl font-semibold mb-2 drop-shadow-md">
+    Enter Your phone number
+  </h1>
+
+  {/* Input Field */}
+  <PhoneCapture/>
+
+  {/* Animated bottom line */}
+  <div className="w-24 h-[3px] bg-orange-400 mt-4 animate-pulse"></div>
+</div>
+
+<style jsx>{`
+  @keyframes floating {
+    0% { transform: translateY(10px); }
+    50% { transform: translateY(0px); }
+    100% { transform: translateY(10px); }
+  }
+  .animate-floating {
+    animation: floating 4s ease-in-out infinite;
+  }
+`}</style>
+
 
       {/* Static background animation */}
       <style jsx>{`
