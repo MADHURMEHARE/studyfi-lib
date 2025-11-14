@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 export default function VideosSection() {
-  const [activeVideo, setActiveVideo] = useState(null);
+  const [activeVideo, setActiveVideo] = useState<number | null>(null);
 
   const videos = [
     { id: 1, src: "/videos/Heroo.mp4", title: "Room 1" },
@@ -13,12 +13,12 @@ export default function VideosSection() {
 
   return (
     <section className="relative w-full h-screen py-20 px-6 bg-black text-white rounded-3xl">
-      {/* Video Grid */}
-      <div className=" text-center py-20">
+      <div className="text-center py-20">
         <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-xl">
-        lab interior videos
+          lab interior videos
         </h2>
       </div>
+
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-7xl mx-auto">
         {videos.map((video) => (
           <div
@@ -39,9 +39,6 @@ export default function VideosSection() {
           </div>
         ))}
       </div>
-
-      {/* Bottom Center Heading */}
-     
     </section>
   );
 }
