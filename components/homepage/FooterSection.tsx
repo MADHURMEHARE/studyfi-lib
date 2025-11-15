@@ -33,7 +33,7 @@ export default function FooterSection() {
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md text-lg leading-relaxed">
-              StudyFi Library, located in <span className="text-orange-400 font-semibold">Vaibhav Colony, Dastur Nagar, MIDC Road, Amravati</span>, helps students prepare for competitive exams.
+              StudyFi Library, located in <span className="text-orange-400 font-semibold">Vaibhav Colony, Dastur Nagar, MIDC Road, Amravati</span>
             </p>
           </div>
 
