@@ -54,10 +54,10 @@ export default function PhoneCapture() {
           px-6 py-2 rounded-full
           bg-orange-500 text-white font-medium
           hover:bg-orange-600 active:scale-95
-          transition shadow-md
+          transition shadow-md mt-4
         "
       >
-        Send Number
+        for enquiry
       </button>
       <style jsx>{`
         .animate-fade {

@@ -89,17 +89,36 @@ export default function HeroSection({
       )}
 
       {/* Background Video */}
-      {videoUrl && (
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-80"
-        >
-          <source src={videoUrl} type="video/mp4" />
-        </video>
-      )}
+   {/* Background Video Layer (NO blur / NO scale) */}
+{videoUrl && (
+  <div className="absolute inset-0 z-0">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-full object-cover"
+    >
+      <source src={videoUrl} type="video/mp4" />
+    </video>
+
+    {/* Dark overlay */}
+    <div className="absolute inset-0 bg-black/50"></div>
+  </div>
+)}
+
+{/* Visual Glass / Blur Layer (DESIGN ONLY) */}
+<div
+  className="absolute inset-0 z-[1] pointer-events-none"
+  style={{
+    backdropFilter: `blur(${blurAmount}px)`,
+  }}
+>
+  <div className="w-full h-full p-10 md:p-20">
+    <div className="w-full h-full rounded-3xl border border-white/20 bg-white/5 shadow-2xl" />
+  </div>
+</div>
+
 
     </div>
   </div>
@@ -145,53 +164,33 @@ export default function HeroSection({
           {description}
         </p>
 
-        {/* Features Grid - Lifts up and moves slightly slower */}
-        {/* <div
-          className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl w-full mx-auto transition-transform duration-75 ease-out"
-          style={{ transform: `translateY(-${featuresParallax}px)` }}
-        >
-          {features.map((feature, idx) => (
-            <div
-              key={idx}
-              className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-2xl border border-orange-200 text-gray-900 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <div className="text-4xl mb-4 text-orange-600">
-                {feature.icon === 'MapPin' ? <MapPin size={32} /> : feature.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </div>
-          ))} */}
-         {/* </div> */}
+       
       </div> 
 {/* Semi-circle bottom center */}
-<div
-  className="
-    absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2
-    w-[360px] h-[200px]
-    bg-gradient-to-b from-white via-white/90 to-white/70
-    rounded-t-full
-    shadow-2xl border border-white/20
-    backdrop-blur-xl
-    animate-floating
-    flex flex-col items-center justify-center
-    px-6
-  "
->
+
   {/* Glow Ring */}
-  <div className="absolute inset-0 rounded-t-full bg-white/30 blur-xl pointer-events-none"></div>
+{/* CTA Container */}
+<div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-full max-w-md px-4">
 
-  {/* Title */}
-  <h1 className="text-gray-800 text-xl font-semibold mb-2 drop-shadow-md">
-    Enter Your phone number
-  </h1>
+  <div className="flex flex-col md:flex-row items-center gap-6">
+    
+    {/* Left: Text Section */}
+    <div className="flex-1 text-center md:text-left">
+     
+   
 
-  {/* Input Field */}
-  <PhoneCapture/>
+    {/* Right: Phone Input */}
+    <div className="flex-1 w-full">
+      <PhoneCapture />
+    </div>
+    
+  </div>
 
-  {/* Animated bottom line */}
-  <div className="w-24 h-[3px] bg-orange-400 mt-4 animate-pulse"></div>
 </div>
+  {/* Divider */}
+  
+</div>
+
 
 <style jsx>{`
   @keyframes floating {
