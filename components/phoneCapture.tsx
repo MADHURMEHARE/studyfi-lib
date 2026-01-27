@@ -48,7 +48,17 @@ export default function PhoneCapture() {
           {message}
         </div>
       )}
-
+ <button
+        onClick={sendPhone}
+        className="
+          px-6 py-2 rounded-full
+          bg-orange-500 text-white font-medium
+          hover:bg-orange-600 active:scale-95
+          transition shadow-md
+        "
+      >
+        Send Number
+      </button>
       <style jsx>{`
         .animate-fade {
           animation: fadeInOut 2.5s ease-in-out;
