@@ -15,24 +15,51 @@ export default function LoginPage() {
   const { login } = useAuth();
   const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsLoading(true);
 
-    try {
-      const success = await login(email, password);
-      if (success) {
-        toast.success('Login successful!');
-        router.push('/dashboard');
-      } else {
-        toast.error('Invalid credentials. Please try again.');
-      }
-    } catch (error) {
-      toast.error('Login failed. Please try again.');
-    } finally {
-      setIsLoading(false);
+  try {
+    const res = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await res.json();
+
+    console.log("STATUS:", res.status);
+    console.log("DATA:", data);
+
+    // 🔴 HARD STOP if token missing
+    if (!data?.token) {
+      console.error("❌ TOKEN MISSING FROM RESPONSE");
+      toast.error("Token not received");
+      return;
     }
-  };
+
+    // 🔥 PROOF LOG
+    console.log("✅ SAVING TOKEN:", data.token);
+
+    localStorage.setItem("token", data.token);
+
+    // 🔥 VERIFY IMMEDIATELY
+    console.log(
+      "✅ TOKEN AFTER SAVE:",
+      localStorage.getItem("token")
+    );
+
+    toast.success("Login successful!");
+    router.push("/dashboard");
+
+  } catch (err) {
+    console.error(err);
+    toast.error("Login failed");
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100 flex items-center justify-center px-4">
