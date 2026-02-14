@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { LogOut, Plus, Mail, Users, MapPin, Home } from 'lucide-react';
-import ProtectedRoute from '@/components/shared/ProtectedRoute';
+// import ProtectedRoute from '@/components/shared/ProtectedRoute';
 import { useAuth } from '@/lib/auth-context';
 import SeatMap from '@/components/dashboard/SeatMap';
 import StudentTable from '@/components/dashboard/StudentTable';
@@ -12,6 +12,8 @@ import StudentForm from '@/components/dashboard/StudentForm';
 import PendingApprovals from '@/components/dashboard/PendingApprovals';
 import SubscriptionManager from '@/components/dashboard/SubscriptionManager';
 import NotificationSystem from '@/components/dashboard/NotificationSystem';
+
+
 
 interface Student {
   _id: string;
@@ -215,45 +217,56 @@ export default function Dashboard() {
   const occupiedSeats = seats.filter(seat => !seat.isAvailable).length;
   const unpaidStudents = students.filter(student => student.feeStatus === 'Unpaid').length;
 
-  return (
-    <ProtectedRoute>
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100">
-        {/* Background Notification System */}
-        <NotificationSystem />
-      
-      {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md shadow-lg border-b border-orange-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
-                <Users className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">Student Dashboard</h1>
-                <p className="text-orange-600 font-medium">STUDFI LIBRARY Management System</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={handleGoHome}
-                className="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-200"
-              >
-                <Home className="w-5 h-5" />
-                <span>Home</span>
-              </button>
-              <button
-                onClick={handleLogout}
-                className="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all duration-200"
-              >
-                <LogOut className="w-5 h-5" />
-                <span>Logout</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
 
+
+  return ( 
+  <div className="flex min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100">
+  
+  {/* SIDEBAR */}
+  <aside className="hidden md:flex w-64 flex-col bg-white/90 backdrop-blur-md border-r border-orange-200 fixed inset-y-0 left-0 z-30">
+    <div className="p-6 font-bold text-xl text-orange-600">
+      StudyFi Admin
+    </div>
+
+    <nav className="flex-1 px-4 space-y-2">
+      <button className="w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50">
+        Dashboard
+      </button>
+      <button className="w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50">
+        Students
+      </button>
+      <button className="w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50">
+        Subscriptions
+      </button>
+    </nav>
+
+    <div className="p-4 border-t">
+      <button
+        onClick={handleLogout}
+        className="w-full text-red-600 px-4 py-2 rounded-lg hover:bg-red-50"
+      >
+        Logout
+      </button>
+    </div>
+  </aside>
+
+  {/* MAIN CONTENT */}
+  <div className="flex-1 md:ml-64 w-full">
+
+    {/* Mobile Top Bar */}
+    <div className="md:hidden bg-white shadow px-4 py-3 sticky top-0 z-20">
+      <h1 className="font-bold text-orange-600">StudyFi Dashboard</h1>
+    </div>
+
+    {/* CONTENT WRAPPER */}
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      
+      {/* 🔥 KEEP ALL YOUR EXISTING CONTENT HERE 🔥 */}
+      <NotificationSystem />
+
+      {/* Stats Cards */}
+      {/* (your existing code continues unchanged) */}
+      
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -410,7 +423,9 @@ export default function Dashboard() {
           <SubscriptionManager />
         )}
       </main>
-      </div>
-    </ProtectedRoute>
+
+    </main>
+  </div>
+</div>
   );
 }
