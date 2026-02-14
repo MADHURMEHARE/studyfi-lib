@@ -7,7 +7,7 @@ export default function PhoneCapture() {
 
   const sendPhone = async () => {
     if (!/^[0-9]{10}$/.test(phone)) {
-      setMessage("❌ Please enter a valid 10-digit number");
+      setMessage("❌ Please  a valid 10-digit number");
       return;
     }
 
