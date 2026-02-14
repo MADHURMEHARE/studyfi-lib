@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     { email, role: "admin" },
     "MY_SECRET_KEY",
     { expiresIn: "1d" }
-  // );
+  );
 
   return NextResponse.json({
     success: true,
